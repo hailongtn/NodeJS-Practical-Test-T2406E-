@@ -10,7 +10,7 @@ Server run on ` http://localhost:3001 `.
 
    ⭐ Add Form 
 
-![Add form.](./image/add.png)
+![Add form.](./image/add2.png)
 
    ⭐ About page
 ![About Page.](image/about.png)
