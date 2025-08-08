@@ -90,8 +90,9 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" onclick="closeAddModal()">Cancel</button>
                     <button type="submit" class="btn btn-primary" id="addTreeButton">Add Tree</button>
+                    <button type="button" class="btn btn-warning" onclick="resetForm()"><i class="fas fa-sync-alt"></i> Reset</button>
+                    <button type="button" class="btn btn-secondary" onclick="closeAddModal()">Cancel</button>
                 </div>
             </form>
         </div>
@@ -335,6 +336,44 @@
                 }
             });
         });
+
+        // Function to reset the add tree form with animation
+        function resetForm() {
+            // Store the current values
+            const oldValues = {
+                treename: document.getElementById('treename').value,
+                description: document.getElementById('description').value,
+                imageUrl: document.getElementById('imageUrl').value
+            };
+
+            // Only proceed with reset if there's data to clear
+            if (oldValues.treename || oldValues.description || oldValues.imageUrl || document.getElementById('imageFile').value) {
+                // Add shake animation class to fields with content
+                ['treename', 'description', 'imageUrl'].forEach(id => {
+                    const element = document.getElementById(id);
+                    if (element.value) {
+                        element.classList.add('shake');
+                        setTimeout(() => {
+                            element.classList.remove('shake');
+                            element.value = '';
+                        }, 500);
+                    }
+                });
+
+                // Reset file input
+                document.getElementById('imageFile').value = '';
+
+                // Reset image preview with fade effect
+                const preview = document.getElementById('imagePreview');
+                if (preview) {
+                    preview.style.opacity = '0';
+                    setTimeout(() => {
+                        preview.innerHTML = '<i class="fas fa-image" style="font-size: 2rem; color: #cbd5e1;"></i>';
+                        preview.style.opacity = '1';
+                    }, 300);
+                }
+            }
+        }
     </script>
 
     <%- include('../partials/footer') %>

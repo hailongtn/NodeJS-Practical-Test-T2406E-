@@ -1,1 +1,31 @@
-<%- include('../partials/header') %><h1>About Me</h1><p> Bài Thực Hành của Bùi Hải Long Thuộc lớp T2406E</p><%- include('../partials/footer') %>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>About - TreeShop</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <%- include('../partials/header') %>
+    
+    <div class="dashboard">
+        <div class="dashboard-header">
+            <div class="header-content">
+                <h1><i class="fas fa-user-circle"></i> About Me</h1>
+            </div>
+        </div>
+
+        <div style="max-width: 800px; margin: 2rem auto; padding: 0 1rem;">
+            <div style="background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                <h2 style="color: #2c3e50; margin-bottom: 1rem;">Bài Thực Hành của Bùi Hải Long - Lớp T2406E</h2>
+                <p style="color: #555; line-height: 1.6;">
+                    Đây là bài thực hành phát triển web với Node.js và MongoDB. 
+                    Dự án TreeShop giúp quản lý danh sách cây cảnh với giao diện thân thiện và dễ sử dụng.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <%- include('../partials/footer') %>
+</body>
+</html>
